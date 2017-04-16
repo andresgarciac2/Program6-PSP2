@@ -1,0 +1,1 @@
+web: java -cp target/Tarea6PSP-1.0-SNAPSHOT.jar edu.uniandes.ecos.app.App
