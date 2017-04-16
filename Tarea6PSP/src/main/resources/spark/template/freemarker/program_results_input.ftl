@@ -36,20 +36,9 @@ tr:nth-child(even) {
     <th>x (resultado)</th>
   </tr>
   <tr> 
-  	<td>0.20</td>
-  	<td>6</td>
-    <td>${result1}</td>
-  </tr>
-    <tr> 
-  	<td>0.45</td>
-  	<td>15</td>
-    <td>${result2}</td>
-  </tr>
-  </tr>
-    <tr> 
-  	<td>0.495</td>
-  	<td>4</td>
-    <td>${result2}</td>
+  	<td>${p}</td>
+  	<td>${dof}</td>
+    <td>${result}</td>
   </tr>
 </div>
 

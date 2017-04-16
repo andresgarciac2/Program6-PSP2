@@ -9,6 +9,7 @@ import java.util.Map;
 
 import edu.uniandes.ecos.calculator.RangeCalculator;
 import edu.uniandes.ecos.formater.DataFormater;
+import edu.uniandes.ecos.x.XCalculator;
 import spark.ModelAndView;
 import spark.template.freemarker.FreeMarkerEngine;
 
@@ -40,12 +41,14 @@ public class App
         //Obtener resultados con datos de entrada por url
         get("/results/:inputFile", (req, res) -> {	
           	DataFormater dataFormater = new DataFormater(req.params(":inputFile"));
-          	if(!((Integer.parseInt(dataFormater.getData()[0]) & 1) == 0)){
-        		Map<String,String> results = new HashMap<String,String>();
-        		results.put("result", "el numero de secuencia debe ser un numero par");
-                return new ModelAndView(results, "program_results.ftl");
-          	}
-            return new ModelAndView(RangeCalculator.calculateResults(Integer.parseInt(dataFormater.getData()[0]),Double.parseDouble(dataFormater.getData()[1]),Double.parseDouble(dataFormater.getData()[2])), "program_results.ftl");
+
+        	Map<String,String> results = new HashMap<String,String>();
+        	XCalculator calculator = new XCalculator(Double.parseDouble(dataFormater.getData()[0]), Double.parseDouble(dataFormater.getData()[1]));
+        	results.put("p", dataFormater.getData()[0]);
+        	results.put("dof",  dataFormater.getData()[1]);
+        	results.put("result",  Double.toString(calculator.calculateX()));
+          	
+            return new ModelAndView(results, "program_results_input.ftl");
 
         }, new FreeMarkerEngine());
     
@@ -53,8 +56,15 @@ public class App
         get("/resultsTest1", (req, res) -> {
 
         	
-              return new ModelAndView(RangeCalculator.calculateResults(10, 1.1, 9), "program_results.ftl");
-
+        	Map<String,String> results = new HashMap<String,String>();
+        	XCalculator calculator = new XCalculator(0.20,6);
+        	results.put("result1",  Double.toString(calculator.calculateX()));
+        	calculator = new XCalculator(0.45,15);
+        	results.put("result2",  Double.toString(calculator.calculateX()));
+        	calculator = new XCalculator(0.495,4);
+        	results.put("result3",  Double.toString(calculator.calculateX()));
+            return new ModelAndView(results, "program_results.ftl");
+            
           }, new FreeMarkerEngine());
     }
 }

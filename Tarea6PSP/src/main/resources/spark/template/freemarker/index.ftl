@@ -7,9 +7,9 @@
 <body>
 
   <#include "nav.ftl">
-    <h1>Presentado por Andr�s Felipe Garc�a Cifuentes</h1>
+    <h1>Presentado por Andres Felipe Garcia Cifuentes</h1>
 	<br>
-	<a href="/resultsTest1" style="font-size: 30px;">Resultado del Test 1</a>
+	<a href="/resultsTest1" style="font-size: 30px;">Resultado del Test</a>
 
 	
 </body>
