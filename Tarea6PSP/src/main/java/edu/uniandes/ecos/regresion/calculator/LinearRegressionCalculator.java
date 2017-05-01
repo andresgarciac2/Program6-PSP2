@@ -8,7 +8,7 @@ import org.apache.commons.math3.stat.regression.SimpleRegression;
 /**
  * 
  * Clase para calcular los valores solicitados por el enunciado
- * @author AndrésGarcía
+ * @author AndresGarcia
  *@version 0.0.1
  */
 public class LinearRegressionCalculator {

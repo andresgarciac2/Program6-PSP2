@@ -2,7 +2,7 @@ package edu.uniandes.ecos.regresion.calculator;
 
 /**
  * DTO que representa un punto para calculo de la regresion lineal
- * @author AndrésGarcía
+ * @author AndresGarcia
  *
  */
 public class Point {
