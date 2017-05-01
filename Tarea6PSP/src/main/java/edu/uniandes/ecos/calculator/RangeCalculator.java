@@ -10,10 +10,13 @@ import java.util.Map;
  */
 public class RangeCalculator {
 
+
 	/**
 	 * Calcula la formula de simpson
 	 * 
-	 * @param classes
+	 * @param numSeg
+	 * @param x
+	 * @param dof
 	 * @return
 	 */
 	public static double calculateSimpsonFormula(int numSeg,double x,double dof){
@@ -42,9 +45,11 @@ public class RangeCalculator {
 	}
 	
 	/**
-	 * Calcula los p
-	 * 
-	 * @param classes
+	 *  Calcula los p
+	 *  
+	 * @param numSeg
+	 * @param x
+	 * @param dof
 	 * @return
 	 */
 	public static  Map<String,String> calculateResults(int numSeg,double x,double dof){

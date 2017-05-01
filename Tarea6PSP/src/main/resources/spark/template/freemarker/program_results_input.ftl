@@ -31,14 +31,44 @@ tr:nth-child(even) {
 
 <table>
   <tr>
-    <th>p</th>
-    <th>dof</th>
-    <th>x (resultado)</th>
+    <th>Parameter</th>
+    <th>Expected Value</th>
+  </tr>
+  <tr>
+    <th>r x,y</th>
+    <th>${r}</th>
   </tr>
   <tr> 
-  	<td>${p}</td>
-  	<td>${dof}</td>
-    <td>${result}</td>
+  	<td>r^2</td>
+  	<td>${r2}</td>
+  </tr>
+    <tr> 
+  	<td>significance</td>
+  	<td>${significance}</td>
+  </tr>
+    <tr> 
+  	<td>B0</td>
+  	<td>${b0}</td>
+  </tr>
+    <tr> 
+  	<td>B1</td>
+  	<td>${b1}</td>
+  </tr>
+    <tr> 
+  	<td>Yk</td>
+  	<td>${yk}</td>
+  </tr>
+    <tr> 
+  	<td>Range</td>
+  	<td>${Range}</td>
+  </tr>
+    <tr> 
+  	<td>UPI (70%)-</td>
+  	<td>${UPI}</td>
+  </tr>
+    <tr> 
+  	<td>LPI (70%)</td>
+  	<td>${LPI}</td>
   </tr>
 </div>
 

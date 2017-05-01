@@ -34,7 +34,6 @@ public class XCalculator {
 	/**
 	 * Retorna el valor de X en la Tdist
 	 * 
-	 * @param classes
 	 * @return
 	 */
 	public double calculateX(){
