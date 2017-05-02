@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import edu.uniandes.ecos.formater.DataFormater;
 import edu.uniandes.ecos.range.RangeDeviationCalculator;
 import edu.uniandes.ecos.regresion.calculator.LinearRegressionCalculator;
 import edu.uniandes.ecos.regresion.calculator.Point;
@@ -39,20 +38,6 @@ public class App
         get("/", (req, res) -> {	
 
             return new ModelAndView(null, "index.ftl");
-
-        }, new FreeMarkerEngine());
-        
-        //Obtener resultados con datos de entrada por url
-        get("/results/:inputFile", (req, res) -> {	
-          	DataFormater dataFormater = new DataFormater(req.params(":inputFile"));
-
-        	Map<String,String> results = new HashMap<String,String>();
-        	XCalculator calculator = new XCalculator(Double.parseDouble(dataFormater.getData()[0]), Double.parseDouble(dataFormater.getData()[1]));
-        	results.put("p", dataFormater.getData()[0]);
-        	results.put("dof",  dataFormater.getData()[1]);
-        	results.put("result",  Double.toString(calculator.calculateX()));
-          	
-            return new ModelAndView(results, "program_results_input.ftl");
 
         }, new FreeMarkerEngine());
     
